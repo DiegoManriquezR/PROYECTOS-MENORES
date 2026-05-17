@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2 class="fw-bold text-light mb-0">Gestión de Salas</h2>
+  <a href="{% url 'crear_sala' %}" class="btn btn-danger fw-semibold">
+    Nueva Sala
+  </a>
+</div>
+
+<div class="card bg-secondary border-dark mb-4">
+  <div class="card-body">
+    <form method="get">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control bg-dark text-light border-secondary" placeholder="Buscar por nombre, equipo o ubicación..." value="{{ q }}">
+            <button class="btn btn-danger fw-semibold" type="submit">Buscar</button>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <input type="number" min="1" name="cap" class="form-control bg-dark text-light border-secondary" placeholder="Capacidad mínima" value="{{ cap }}">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="card bg-secondary border-dark">
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-dark table-hover mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th class="fw-semibold">Nombre</th>
+            <th class="fw-semibold">Capacidad</th>
+            <th class="fw-semibold">Equipo</th>
+            <th class="fw-semibold">Ubicación</th>
+            <th class="fw-semibold text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for sala in salas %}
+          <tr>
+            <td class="fw-medium">{{ sala.nombre }}</td>
+            <td><span class="badge bg-info">{{ sala.capacidad }} personas</span></td>
+            <td class="text-light">{{ sala.equipo|default:"Sin especificar" }}</td>
+            <td class="text-light">{{ sala.ubicacion|default:"Sin especificar" }}</td>
+            <td class="text-center">
+              <div class="btn-group" role="group">
+                <a href="{% url 'editar_sala' sala.id %}" class="btn btn-sm btn-secondary fw-medium">Editar</a>
+                <a href="{% url 'eliminar_sala' sala.id %}" class="btn btn-sm btn-danger fw-medium">Eliminar</a>
+              </div>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="5" class="text-center py-4">
+              <div class="text-muted">
+                <p class="mb-0">No hay salas registradas</p>
+                <small>Comienza creando tu primera sala</small>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

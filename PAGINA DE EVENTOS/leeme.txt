@@ -1,0 +1,49 @@
+El Palacio de Baile de Disco Stu
+========================
+
+Descripción
+-----------
+El Palacio de Baile de Disco Stu es una plataforma web interactiva diseñada para promover y gestionar la experiencia de una discoteca temática de música disco con un estilo visual vibrante y neón. La página ofrece a los usuarios varias secciones pensadas para informar, entretener y facilitar la interacción con el club y sus eventos.
+
+¿Cómo funciona?
+---------------
+- Página Principal: Muestra un banner animado con el eslogan “¡Baila toda la noche con Disco Stu!”, eventos destacados con imágenes y fechas, además de una cuenta regresiva para el próximo gran evento. También presenta promociones especiales y un pie de página con información de contacto y suscripción al boletín.
+
+- Eventos: Lista completa de eventos con detalles como fecha, hora, lugar y artistas invitados. Desde aquí, los usuarios pueden acceder a la página específica de cada evento, donde hay videos promocionales y un formulario para reservar entradas. Las reservas se validan y almacenan en el navegador para que los usuarios puedan confirmarlas.
+
+- Galería de Fotos: Presenta fotos de eventos anteriores organizadas por categorías (conciertos, fiestas temáticas, etc.) con filtros interactivos. Los usuarios pueden ampliar las imágenes para verlas mejor.
+
+- Blog: Publicaciones relacionadas con música disco, entrevistas y consejos de baile. Los usuarios pueden dejar comentarios, votar por sus artículos favoritos y participar en la comunidad, con sus interacciones guardadas localmente.
+
+- Contacto: Formulario para que los visitantes envíen preguntas o solicitudes de información, acompañado de datos de ubicación y enlaces a redes sociales (TikTok, Facebook, Instagram). Incluye un modal para confirmar envíos o mostrar mensajes importantes.
+
+- Autenticación: Permite a los usuarios registrarse, iniciar sesión y acceder a su perfil personal donde pueden ver y editar información, así como revisar sus reservas. Las sesiones y datos se almacenan localmente para proteger la privacidad y ofrecer una experiencia personalizada.
+
+Tecnologías usadas
+-----------------
+- React.js para el desarrollo front-end.
+- Bootstrap para diseño responsivo y componentes UI.
+- JavaScript con localStorage para manejo de datos locales.
+- CSS con estilos neón para una estética disco vibrante y llamativa.
+
+Instalación y ejecución
+-----------------------
+1. Clonar o descargar el proyecto.
+2. Instalar dependencias con: npm install
+3. Ejecutar la app en modo desarrollo: npm start
+4. Abrir en navegador: http://localhost:3000
+
+Notas importantes
+-----------------
+- Los datos de usuarios, reservas y comentarios se almacenan localmente en el navegador.
+- Las imágenes y videos deben ubicarse en la carpeta `/public/assets` para ser referenciados correctamente.
+- Algunas rutas y funcionalidades requieren autenticación previa para su acceso.
+
+Contacto
+--------
+Para dudas o soporte, contactar al desarrollador vía email: diego.manriquez19@inacapmail.com
+
+---
+
+¡Gracias por usar Disco Stu's Dance Palace Web!
+

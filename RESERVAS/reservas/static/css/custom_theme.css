@@ -1,0 +1,4 @@
+body { background-color: #f0f0f0; }
+.navbar, .bg-dark { background-color: #000 !important; }
+.navbar .navbar-brand, .nav-link, .navbar a { color: #fff !important; }
+.btn-dark, .btn-dark:hover, .btn-dark:focus { background-color: #000 !important; color: #fff !important; border-color: #000 !important; }

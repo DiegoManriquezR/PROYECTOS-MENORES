@@ -1,0 +1,91 @@
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Georgia', serif;
+}
+
+
+header {
+  background-color: #7F0909; 
+  color: #D3A625;            
+  text-align: center;
+  padding: 4rem 1rem;
+  text-shadow: 2px 2px 4px black;
+}
+
+
+.navbar {
+  background-color: #343a40; 
+}
+
+
+.catalogo .table thead {
+  background-color: #1A472A;
+  color: white;
+}
+
+.catalogo .btn-primary {
+  background-color: #1A472A;
+  border-color: #1A472A;
+}
+
+.catalogo .btn-warning {
+  background-color: #AAAAAA;
+  border-color: #AAAAAA;
+}
+
+.catalogo .btn-danger {
+  background-color: #7f0000;
+}
+
+
+.contacto h2 {
+  color: #0E1A40;
+}
+
+.contacto .btn-primary {
+  background-color: #946B2D;
+  border-color: #946B2D;
+}
+
+.contacto .btn-primary:hover {
+  background-color: #7a561f;
+}
+
+
+.modal-title {
+  font-weight: bold;
+}
+
+.form-control:focus {
+  border-color: #555;
+  box-shadow: none;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.btn {
+  border-radius: 0.4rem;
+}
+
+
+.container h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo-esquina {
+  position: fixed;
+  top: 10px;
+  right: 10px; 
+  width: 100px;
+  height: 20px;
+  z-index: 1000;
+  opacity: 0.9;
+}

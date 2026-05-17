@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg bg-primary" daata-bs-theme="dark">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#">JS + BOOTSTRAP</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">Link</a>
+           </li>
+         </div>
+     </div>
+   </nav>
+
+
+   <div class="container mt-4">
+    <h2>1.- Alerta Dinamica</h2>
+    <button class="btn btn-warning mb-3" onclick="mostrarAlerta()"> Mostrar Alerta</button>
+    <div id="mostrar-alerta"></div>
+
+    <h2 class="mt-5">Formulario con Validación</h2>
+    <form onsubmit="return validarFormulario()">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="correo">
+    </div>
+    <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+    <h2 class="mt-5">3.- Modal desde JS</h2>
+    <button class="btn btn-info" onclick="abrirModal()">Abrir Modal</button>
+
+    <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" >Hola desde un Modal</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Este Modal fue abierto desde Javascript + Bootstrap
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mt-5">Mostrar/Ocultar contenido</h2>
+      <button class="btn btn-dark mb-2" onclick="contenido()">Mostrar/Ocultar Texto</button>
+      <div id="textoOculto" class="border p-3" style="display: none;">
+        Esto es un texto oculto
+    </div>
+</div>
+       
+   <script src="funciones.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+   </head>
+</html>

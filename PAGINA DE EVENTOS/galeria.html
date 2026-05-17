@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería | Disco Stu's Dance Palace</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body class="bg-dark text-light">
+
+  <button id="btn-mute" aria-label="Mute/Unmute" style="position: fixed; top: 10px; left: 10px; z-index: 9999;">🔊</button>
+  
+  <div id="usuario-activo" class="d-flex justify-content-end align-items-center p-3" style="display:none;">
+    <span id="nombre-usuario" class="me-3 fw-bold neon-text"></span>
+    <button id="btn-logout" class="btn btn-danger btn-sm">Cerrar Sesión</button>
+  </div>
+  <section class="container mt-5">
+  <div class="cuadro-negro p-4 rounded text-center">
+    <h2 class="mb-4">Bienvenido a El Palacio de Baile de Disco Stu</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="index.html" class="btn btn-neon">inicio</a>
+      <a href="eventos.html" class="btn btn-neon">Eventos</a>
+      <a href="blog.html" class="btn btn-neon">Blog</a>
+      <a href="galeria.html" class="btn btn-neon">Galería</a>
+      <a href="contacto.html" class="btn btn-neon">Contacto</a>
+      <a href="autenticacionusuarios.html" class="btn btn-neon">Iniciar Sesión</a>
+    </div>
+  </div>
+</section>
+
+  <main class="container py-5">
+    <h2 class="neon-text mb-4 text-center">Recuerdos Inolvidables</h2>
+
+    <div class="d-flex justify-content-center mb-4 flex-wrap gap-2">
+      <button class="btn btn-outline-info filter-btn" data-filter="todos">Todos</button>
+      <button class="btn btn-outline-info filter-btn" data-filter="2024">Año 2024</button>
+      <button class="btn btn-outline-info filter-btn" data-filter="fiesta">Fiestas Temáticas</button>
+      <button class="btn btn-outline-info filter-btn" data-filter="concierto">Conciertos</button>
+    </div>
+
+    <div class="row g-4 galeria">
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="2024 fiesta concierto">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/DJ-JOTA.jpg" class="card-img-top img-click galeria-img" alt="DJ Jota" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="2024 concierto">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/stuperic.gif" class="card-img-top img-click galeria-img" alt="Stu bailando" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="fiesta">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/homero.gif" class="card-img-top img-click galeria-img" alt="Homero bailando" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="2024 fiesta">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/galeria4.webp" class="card-img-top img-click galeria-img" alt="Galería 4" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="concierto">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/galeria6.webp" class="card-img-top img-click galeria-img" alt="Galería 6" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="fiesta">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/stu.gif" class="card-img-top img-click galeria-img" alt="Stu bailando 2" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="fiesta concierto">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/evento.jpg" class="card-img-top img-click galeria-img" alt="Galería 4" />
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 galeria-item" data-categoria="fiesta 2024">
+        <div class="card bg-black neon-border">
+          <img src="Imagenes/galeria2.webp" class="card-img-top img-click galeria-img" alt="Galería 4" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="modalImagen" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-black">
+        <div class="modal-body p-0">
+          <img src="" id="imagenAmpliada" class="img-fluid w-100 rounded" alt="Imagen ampliada" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-black text-center py-4 neon-border-top">
+    <p>El Palacio de Baile de Disco Stu - Todos los derechos reservados</p>
+    <div class="mt-2">
+      <a href="#" class="text-light mx-2"><i class="bi bi-instagram fs-4 neon-icon"></i></a>
+      <a href="#" class="text-light mx-2"><i class="bi bi-facebook fs-4 neon-icon"></i></a>
+      <a href="#" class="text-light mx-2"><i class="bi bi-tiktok fs-4 neon-icon"></i></a>
+    </div>
+  </footer>
+
+  <audio id="musica-fondo" autoplay loop>
+    <source src="musica/La Bouche-Be My Lover.mp3" type="audio/mpeg" />
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="funciones.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card bg-secondary border-dark">
+      <div class="card-header bg-dark border-secondary">
+        <h2 class="card-title mb-0 fw-bold text-light">
+          {% if crear %}Nueva Sala{% else %}Editar Sala{% endif %}
+        </h2>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          
+          <div class="mb-3">
+            <label for="id_nombre" class="form-label fw-semibold text-light">Nombre de la sala</label>
+            <input type="text" name="nombre" class="form-control bg-dark text-light border-secondary" id="id_nombre" placeholder="Ej: Sala de Conferencias A1" value="{{ form.nombre.value|default:'' }}" required>
+            {% if form.nombre.errors %}
+              <div class="text-danger small mt-1">{{ form.nombre.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="mb-3">
+            <label for="id_capacidad" class="form-label fw-semibold text-light">Capacidad (número de personas)</label>
+            <input type="number" name="capacidad" class="form-control bg-dark text-light border-secondary" id="id_capacidad" placeholder="Ej: 25" min="1" value="{{ form.capacidad.value|default:'' }}" required>
+            <div class="form-text text-light">Número máximo de personas que pueden usar la sala</div>
+            {% if form.capacidad.errors %}
+              <div class="text-danger small mt-1">{{ form.capacidad.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="mb-3">
+            <label for="id_equipo" class="form-label fw-semibold text-light">Equipamiento disponible</label>
+            <textarea name="equipo" class="form-control bg-dark text-light border-secondary" id="id_equipo" rows="3" placeholder="Ej: Proyector, Pizarra digital, Sistema de audio">{{ form.equipo.value|default:'' }}</textarea>
+            <div class="form-text text-light">Describe el equipamiento disponible</div>
+            {% if form.equipo.errors %}
+              <div class="text-danger small mt-1">{{ form.equipo.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="mb-4">
+            <label for="id_ubicacion" class="form-label fw-semibold text-light">Ubicación</label>
+            <input type="text" name="ubicacion" class="form-control bg-dark text-light border-secondary" id="id_ubicacion" placeholder="Ej: Piso 2, Edificio Principal" value="{{ form.ubicacion.value|default:'' }}">
+            <div class="form-text text-light">Piso, edificio o referencia de ubicación</div>
+            {% if form.ubicacion.errors %}
+              <div class="text-danger small mt-1">{{ form.ubicacion.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+              {{ form.non_field_errors.0 }}
+            </div>
+          {% endif %}
+          
+          <div class="d-flex gap-2">
+            <button class="btn btn-danger fw-semibold" type="submit">
+              {% if crear %}Crear Sala{% else %}Actualizar Sala{% endif %}
+            </button>
+            <a href="{% url 'lista_salas' %}" class="btn btn-secondary fw-semibold">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.encabezado {
+    background-color: #ffdde1;
+    padding: 20px;
+}
+
+.encabezado h1 {
+    font-size: 2.5em;
+    color: #ff6f61;
+}
+
+.encabezado p {
+    font-size: 1.2em;
+}
+
+
+.nav {
+    background-color: #ffaaa5;
+    padding: 10px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 15px;
+    display: inline-block;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+
+.productos {
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+.productos h2 {
+    color: #ff6f61;
+    font-size: 2em;
+}
+
+.producto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.producto img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+    transform: scale(1.1);
+}
+
+.producto p {
+    font-size: 1em;
+    color: #555;
+}
+
+.producto span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #d65a50;
+}
+
+
+footer {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}

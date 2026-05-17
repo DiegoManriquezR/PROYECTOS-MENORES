@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card bg-secondary border-dark">
+      <div class="card-header bg-dark border-secondary">
+        <h2 class="card-title mb-0 fw-bold text-light">Formulario de Reserva</h2>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          
+          <div class="mb-3">
+            <label for="id_usuario" class="form-label fw-semibold text-light">Nombre del usuario</label>
+            <input type="text" name="usuario" class="form-control bg-dark text-light border-secondary" id="id_usuario" placeholder="Ej: Juan Pérez García" value="{{ form.usuario.value|default:'' }}" required>
+            <div class="form-text text-light">Nombre completo de la persona que hace la reserva</div>
+            {% if form.usuario.errors %}
+              <div class="text-danger small mt-1">{{ form.usuario.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="mb-3">
+            <label for="id_sala" class="form-label fw-semibold text-light">Sala a reservar</label>
+            <select name="sala" class="form-select bg-dark text-light border-secondary" id="id_sala" required>
+              <option value="">Selecciona una sala</option>
+              {% for sala in form.sala.field.queryset %}
+                <option value="{{ sala.id }}" {% if form.sala.value == sala.id %}selected{% endif %}>
+                  {{ sala.nombre }} ({{ sala.capacidad }} personas)
+                </option>
+              {% endfor %}
+            </select>
+            {% if form.sala.errors %}
+              <div class="text-danger small mt-1">{{ form.sala.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="mb-3">
+            <label for="id_fecha_hora" class="form-label fw-semibold text-light">Fecha y hora de inicio</label>
+            <input type="datetime-local" name="fecha_hora" class="form-control bg-dark text-light border-secondary" id="id_fecha_hora" step="300" value="{{ form.fecha_hora.value|date:'Y-m-d\TH:i'|default:'' }}" required>
+            {% if form.fecha_hora.errors %}
+              <div class="text-danger small mt-1">{{ form.fecha_hora.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          <div class="mb-4">
+            <label for="id_duracion" class="form-label fw-semibold text-light">Duración (minutos)</label>
+            <input type="number" name="duracion" class="form-control bg-dark text-light border-secondary" id="id_duracion" placeholder="Ej: 60" min="15" step="15" value="{{ form.duracion.value|default:'' }}" required>
+            <div class="form-text text-light">Duración de la reserva en minutos (mínimo 15 minutos)</div>
+            {% if form.duracion.errors %}
+              <div class="text-danger small mt-1">{{ form.duracion.errors.0 }}</div>
+            {% endif %}
+          </div>
+          
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+              {{ form.non_field_errors.0 }}
+            </div>
+          {% endif %}
+          
+          <div class="d-flex gap-2">
+            <button class="btn btn-danger fw-semibold" type="submit">Guardar Reserva</button>
+            <a href="{% url 'lista_reservas' %}" class="btn btn-secondary fw-semibold">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

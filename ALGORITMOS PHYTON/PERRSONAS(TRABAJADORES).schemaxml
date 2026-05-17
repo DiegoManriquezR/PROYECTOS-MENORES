@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_unicode_ci">trabajadores</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="trabajadores" view="colnames">
+<left>0</left>
+<top>840</top>
+<width>436</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `trabajadores` (
+  `persona_id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `persona_cargo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`persona_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

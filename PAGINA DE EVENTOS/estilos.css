@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Russo+One&display=swap');
+
+body {
+  background-color: #0b0c10;
+  color: #e0f7fa;
+  font-family: 'Orbitron', 'Russo One', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.neon-text {
+  color: #39ff14;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #0aff87,
+    0 0 80px #0aff87;
+}
+
+.neon-pink {
+  color: #ff00c8;
+  text-shadow:
+    0 0 5px #ff00c8,
+    0 0 10px #ff00c8,
+    0 0 20px #ff00c8,
+    0 0 40px #ff66d9,
+    0 0 80px #ff66d9;
+}
+
+.neon-blue {
+  color: #00f0ff;
+  text-shadow:
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px #00cfff,
+    0 0 80px #00cfff;
+}
+
+.neon-orange {
+  color: #ff7f00;
+  text-shadow:
+    0 0 5px #ff7f00,
+    0 0 10px #ff7f00,
+    0 0 20px #ff7f00,
+    0 0 40px #ff9f33,
+    0 0 80px #ff9f33;
+}
+
+.neon-border {
+  border: 2px solid #39ff14;
+  box-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14;
+  border-radius: 8px;
+}
+
+.neon-border-pink {
+  border: 2px solid #ff00c8;
+  box-shadow:
+    0 0 5px #ff00c8,
+    0 0 10px #ff00c8,
+    0 0 20px #ff00c8;
+  border-radius: 8px;
+}
+
+.navbar.neon-border-bottom {
+  border-bottom: 3px solid #39ff14;
+  box-shadow:
+    0 2px 10px #39ff14;
+}
+
+.btn-neon {
+  color: #000;
+  background-color: #39ff14;
+  border: none;
+  font-weight: bold;
+  box-shadow:
+    0 0 5px #39ff14,
+    0 0 15px #39ff14,
+    inset 0 0 10px #0aff87;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background-color: #0aff87;
+  box-shadow:
+    0 0 10px #0aff87,
+    0 0 20px #0aff87,
+    inset 0 0 15px #39ff14;
+  color: #fff;
+}
+
+input, select, textarea {
+  background-color: #121416;
+  border: 2px solid #39ff14;
+  color: #e0f7fa;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  font-family: 'Orbitron', monospace;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0aff87;
+  box-shadow:
+    0 0 8px #0aff87;
+}
+
+.list-group-item.bg-dark.neon-border {
+  background-color: #121416 !important;
+  border-color: #39ff14 !important;
+  color: #39ff14 !important;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.list-group-item.bg-dark.neon-border:hover {
+  background-color: #0aff87 !important;
+  color: #121416 !important;
+  cursor: pointer;
+}
+
+.display-4.neon-text {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+@keyframes parpadeoNeon {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #39ff14,
+      0 0 20px #39ff14,
+      0 0 30px #39ff14,
+      0 0 40px #0aff87;
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: none;
+  }
+}
+
+.neon-parpadeo {
+  animation: parpadeoNeon 2s infinite;
+}
+
+.bg-neon {
+  background-color: #121416;
+  box-shadow:
+    0 0 10px #39ff14,
+    0 0 20px #0aff87,
+    inset 0 0 10px #39ff14;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(11, 12, 16, 0.95);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #121416;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 2px solid #39ff14;
+  border-radius: 10px;
+  max-width: 500px;
+  color: #39ff14;
+  font-family: 'Orbitron', monospace;
+  box-shadow:
+    0 0 15px #39ff14,
+    0 0 30px #0aff87;
+}
+
+.close-btn {
+  color: #39ff14;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #0aff87;
+}
+
+@media (max-width: 768px) {
+  .display-4.neon-text {
+    font-size: 2rem;
+  }
+  .btn-neon {
+    font-size: 0.9rem;
+  }
+}
+
+.border-neon {
+  border: 2px solid #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.card .neon-text {
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
+}
+
+#btn-mute {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  border-radius: 50%;
+  background-color: #111;
+  border: 2px solid #0ff;
+  color: #0ff;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  box-shadow: 0 0 10px #0ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-mute:hover {
+  background-color: #0ff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+#btn-mute {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #222;
+  color: #0ff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #0ff;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+
+#btn-mute:hover {
+  background-color: #0ff;
+  color: #222;
+}
+
+body {
+  background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDh2dGNwZXBiM3B2eHh3MjdtZGhnM2NtNzQ4N2d2Mm1wcGsyOWRicSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZJB5EPInvETQY/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #e0f7fa;
+  font-family: 'Orbitron', 'Russo One', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.imagen-normal {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+.galeria-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 576px) {
+  .galeria-img {
+    height: 180px;
+  }
+}
+
+.cuadro-negro {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #39ff14;
+  box-shadow: 0 0 20px #39ff14;
+}
+
+#top-bar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 8px;
+  z-index: 1100;
+  
+  white-space: nowrap;
+}
+
+#top-bar #btn-mute {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: #00ffff;
+  cursor: pointer;
+}
+
+#usuario-activo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+
+#usuario-activo #nombre-usuario {
+  margin-right: 1rem;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+
+#btn-logout {
+  white-space: nowrap;
+}
+
+#lista-comentarios li {
+  border-left: 4px solid #39ff14;
+}
+
+
+
+
+
+
+
+
+
+

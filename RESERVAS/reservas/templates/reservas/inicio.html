@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="card bg-secondary border-dark shadow-lg">
+      <div class="card-body text-center py-5">
+        <h1 class="display-5 fw-bold text-light mb-4">Sistema de Reservas</h1>
+        <h2 class="h3 text-light mb-4">INACAP Curicó</h2>
+        <p class="lead text-light mb-5">Administra las salas y realiza reservaciones de manera eficiente y profesional.</p>
+        
+        <div class="row g-4 mt-4">
+          <div class="col-md-6">
+            <div class="card bg-dark border-secondary h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title text-light fw-semibold">Gestión de Salas</h5>
+                <p class="card-text text-light">Administra el inventario completo de salas disponibles</p>
+                <a href="{% url 'lista_salas' %}" class="btn btn-danger fw-semibold">Ver Salas</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bg-dark border-secondary h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title text-light fw-semibold">Sistema de Reservas</h5>
+                <p class="card-text text-light">Controla y programa todas las reservaciones</p>
+                <a href="{% url 'lista_reservas' %}" class="btn btn-danger fw-semibold">Ver Reservas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
